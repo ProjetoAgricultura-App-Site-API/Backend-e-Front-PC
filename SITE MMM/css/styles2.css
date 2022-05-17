@@ -1,0 +1,16 @@
+/*STYLES DO CADASTRO*/
+/*GERAL*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #323232;
+    border: none;
+}
+
+body{
+    background-image: url(../img/alimentos-organicos.jpg);
+    background-size: cover;
+}
