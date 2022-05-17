@@ -37,7 +37,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 25px;
 }
 
@@ -69,4 +69,37 @@ form{
 label{
     font-weight: bold;
     font-size: .8rem;
+}
+
+input{
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-weight: 0.9rem;
+    margin-bottom: 40px;
+}
+
+input:focus{
+    border-color: lime;
+}
+
+input[type="submit"]{
+    background-color: lime;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/*VALIDAÇÕES*/
+
+.error-validation{
+    color: red;
+    position: absolute;
+    top: 57px;
+    font-size: .8rem;
+}
+
+template{
+    
 }
