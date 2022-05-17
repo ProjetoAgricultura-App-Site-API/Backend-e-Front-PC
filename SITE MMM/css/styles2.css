@@ -10,7 +10,63 @@
     border: none;
 }
 
+input, label{
+    display: block;
+    width: 100%;
+    
+}
+
+input:focus, label:focus{
+    outline: none;
+}
+
+a{
+    color: blue;
+}
+
+
 body{
+    padding-top: 5vh;
     background-image: url(../img/alimentos-organicos.jpg);
     background-size: cover;
+}
+
+/*FORMULÁRIO*/
+#main-container{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+#main-container h1{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.full-box{
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.half-box{
+    flex: 1 1 45%;
+}
+
+.spacing{
+    margin-right: 2.5%;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
 }
