@@ -1,3 +1,4 @@
+//GUARDA O CADASTRO E REDIRECIONA PARA TELA DE LOGIN
 function guardaCadastro() {
     var nomeValor = document.getElementById("name").value;
     var sobrenomeValor = document.getElementById("lastname").value;
