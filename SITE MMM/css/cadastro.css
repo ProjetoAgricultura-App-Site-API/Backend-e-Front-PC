@@ -109,3 +109,13 @@ input[type="submit"]:hover{
 .template{
     display: none;
 }
+
+#msg-error {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 15px;
+    border-radius: 4px;
+    display: none;
+}

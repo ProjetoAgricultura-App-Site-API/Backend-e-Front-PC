@@ -3,6 +3,8 @@
 //GUARDA O CADASTRO E REDIRECIONA PARA TELA DE LOGIN
 function guardaCadastro() {
     
+    var senha = document.getElementById("password");
+    let msgerror = document.getElementById("msg-error");
     var nomeValor = document.getElementById("name").value;
     var sobrenomeValor = document.getElementById("lastname").value;
     var emailValor = document.getElementById("email").value;
@@ -28,7 +30,9 @@ function guardaCadastro() {
         window.location.href = "index.html"; 
     } 
     else{
-        alert("SENHAS DIFERENTES, DIGITE NOVAMENTE");
+        msgerror.setAttribute('style', 'display: block');
+        msgerror.innerHTML = 'As senhas não conferem';
+        senha.focus()
     }
             
 }
