@@ -3,6 +3,7 @@ function guardaCadastro() {
     var sobrenomeValor = document.getElementById("lastname").value;
     var emailValor = document.getElementById("email").value;
     var senhaValor = document.getElementById("password").value;
+    const btn = document.getElementById("CADASTRAR");
 
     var formValue = {
         Nome: nomeValor,
@@ -12,5 +13,8 @@ function guardaCadastro() {
     }
 
     console.log(formValue);
-}
+    alert("Cadastro realizado com sucesso, faça o login!!!");
 
+    location.href = "index.html";   
+            
+}
