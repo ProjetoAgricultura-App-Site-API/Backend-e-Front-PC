@@ -33,6 +33,8 @@ function entrar(){
         let token = Math.random().toString(16).substr(2);
         localStorage.setItem('token', token);
 
+        localStorage.setItem('userLogado', JSON.stringify(userValid));
+
 
     } else {
         user.setAttribute('style', 'border-bottom: 2px solid red');
