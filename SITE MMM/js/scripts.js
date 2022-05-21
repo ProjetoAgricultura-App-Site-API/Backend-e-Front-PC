@@ -1,51 +1,16 @@
-class Validator{
+function guardaCadastro() {
+    var nomeValor = document.getElementById("name").value;
+    var sobrenomeValor = document.getElementById("lastname").value;
+    var emailValor = document.getElementById("email").value;
+    var senhaValor = document.getElementById("password").value;
 
-    constructor(){
-        this.validations = [
-
-            'data-min-length'
-
-        ]
+    var formValue = {
+        Nome: nomeValor,
+        Sobrenome: sobrenomeValor,
+        Email: emailValor,
+        Senha: senhaValor
     }
 
-    //iniciar a validação de todos os campos
-    validate(form){
-
-        //pegar os inputs
-        let inputs = document.getElementsByName('input');
-
-        //transforma HTMLcollection -> array
-        let inputsArray = [...inputs];
-
-        //loop nos inputs e validação no que for encontrado
-        inputsArray.forEach(function(input) {
-            //loop em todas as validações existentes
-            for(let i = 0; this.validations.length > i; i++){
-
-                if(input.getAttribute(this.validations[i]) != null){
-
-                }
-
-            }
-        }, this);
-
-    }
-
+    console.log(formValue);
 }
 
-
-let form = document.getElementById("register-form");
-let submit = document.getElementById("btn-submit");
-
-let validator = new Validator();
-
-//evento que dispara as validações
-submit.addEventListener('click', function(e) {
-
-    e.preventDefault();
-
-    validator.validate(form);
-
-
-
-} ) 
