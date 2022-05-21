@@ -25,7 +25,7 @@ function guardaCadastro() {
         console.log(formValue);
 
         alert("Cadastro realizado com sucesso, faça o login!!!");
-        location.href = "index.html"; 
+        window.location.href = "index.html"; 
     } 
     else{
         alert("SENHAS DIFERENTES, DIGITE NOVAMENTE");

@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src="js/login.js"></script>
 </head>
 <body>
     <div id="login-container">
         <h1><img src="img/logo mmm.png" alt=""></h1>
         <form action="javascript: entrar();">
-            <label for="emailLabel">Email</label>
+            <label for="emailLabel" id="emailLabel">Email</label>
             <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="off" required>
-            <label for="passwordLabel">Senha</label>
+            <label for="passwordLabel" id="passwordLabel">Senha</label>
             <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
             <div id="msg-error"></div>
             <input type="submit" id ="btn-submit" value="Login">
