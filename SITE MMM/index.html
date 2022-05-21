@@ -7,16 +7,17 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/login.js"></script>
 </head>
 <body>
     <div id="login-container">
         <h1><img src="img/logo mmm.png" alt=""></h1>
-        <form action="">
-            <label for="email">Email</label>
+        <form action="javascript: entrar();">
+            <label for="emailLabel">Email</label>
             <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="off" required>
-            <label for="password">Senha</label>
+            <label for="passwordLabel">Senha</label>
             <input type="password" name="password" id="password" placeholder="Digite sua senha" required>
-            <a href="#" id="forgot-pass">Esqueceu a senha?</a>
+            <div id="msg-error"></div>
             <input type="submit" id ="btn-submit" value="Login">
         </form>
         <div id="register-container">

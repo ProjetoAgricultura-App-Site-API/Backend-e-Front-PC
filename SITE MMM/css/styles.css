@@ -20,13 +20,16 @@ textarea:focus, input:focus {
 
 }
 
-a {
-    font-size: .8rem;
+#msg-error {
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 15px;
+    border-radius: 4px;
+    display: none;
 }
 
-a:hover {
-    color: #08558b;
-}
+
 
 /*container login*/
 
