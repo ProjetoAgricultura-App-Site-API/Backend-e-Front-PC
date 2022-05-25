@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: #323232;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-image: url(../img/fundodesfocado.png);
+    background-size: cover;
+}
+
+
+.center{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+.logo{
+    width: 50%;
+}
+
+header{
+    padding: 20px 0;
+}
+
+.menu{
+    padding-top: 30px;
+    width: 50%;
+    text-align: right;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.menu button{
+    width: 80px;
+    background-color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+}
+
+/*CONTAINER DO REGISTRO*/
+#pesquisa{
+    background-color: #F0FFF0;
+    width: 400px;
+    margin-left: 60px;
+    padding: 10px 30px;
+    margin-top: 4vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/*FORMULÁRIO*/
+
+form{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+label, input{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    color: #323232;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+input {
+    background-color: #F0FFF0;
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+
+#forgot-pass {
+    text-align: right;
+    display: block;
+}
+
+input[type="submit"]{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: burlywood;
+    transition: .5s;
+}
