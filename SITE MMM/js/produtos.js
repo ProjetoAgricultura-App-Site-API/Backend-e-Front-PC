@@ -1,6 +1,6 @@
 function puxaproduto(){
     const url = "http://localhost:5600/api";
-    let test = document.getElementById('test');
+    let content = document.getElementById('content');
     let result = document.getElementById('result');
     let produto = document.getElementById('produto');
     let quant = document.getElementById('quant');
@@ -44,7 +44,7 @@ function puxaproduto(){
 
                 }
             } 
-            else {result.innerHTML = "NÃO HOUVE RESULTADOS NA BUSCA";}
+            else {content.innerHTML = "NÃO HOUVE RESULTADOS NA BUSCA";}
             
         })
         .catch(error => console.log(error))
