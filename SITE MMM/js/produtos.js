@@ -1,4 +1,6 @@
 function puxaproduto(){
+    const url = "http://localhost:5600/api";
+    let result = document.getElementById('result');
     let produto = document.getElementById('produto');
     let quant = document.getElementById('quant');
     let data = document.getElementById('data');
@@ -9,7 +11,22 @@ function puxaproduto(){
         Data: data.value
     }
 
+    function getUser(){
+        axios.get(url)
+        .then(response => {
+            const dados = response.data.users;
+            const filtrodados = dados.filter(value => {
+                if(value.Produto.toLowerCase() == req.Produto.toLowerCase() && value.Data == req.Data && value.Quantidade.toLowerCase() >= req.Quantidade.toLowerCase()){
+                    return value;
+                }
+            })
+            result.innerHTML = JSON.stringify(filtrodados);
+        })
+        .catch(error => console.log(error))
+    }
+
     console.log(req);
+    getUser()
 
     document.getElementById('produto').value = '';
     document.getElementById('quant').value = '';
@@ -39,7 +56,6 @@ function procurarProduto(){
                 listOfOptions[j].remove()
             }
         }
-        console.log(newArray)
         if (!newArray.includes(filteredFruitsList[i])){
             const option = document.createElement('option')
             option.value = filteredFruitsList[i]
@@ -47,5 +63,4 @@ function procurarProduto(){
             data_list.appendChild(option)
         }
     }
-    console.log(filteredFruitsList)
 }

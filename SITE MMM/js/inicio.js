@@ -7,7 +7,6 @@ if(localStorage.getItem('token') == null){
     window.location.href = "index.html";
 }
 else{
-    logado.innerHTML = `Olá ${userLogado.Nome}`;
 }
 
 function sair(){

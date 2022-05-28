@@ -65,6 +65,17 @@ header{
     text-align: center;
 }
 
+#result{
+    background-color: #F0FFF0;
+    width: 800px;
+    position:absolute;
+	left:40%;
+	top:30%;
+	margin-left:-110px;
+	margin-top:-40px;
+    border-radius: 10px;
+    text-align: center;
+}
 
 /*FORMULÁRIO*/
 
