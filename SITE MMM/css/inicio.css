@@ -65,15 +65,39 @@ header{
     text-align: center;
 }
 
-#result{
+/*Tabela de Resultados*/
+#content{
     background-color: #F0FFF0;
-    width: 800px;
+    width: 850px;
     position:absolute;
-	left:40%;
+	left:45%;
 	top:30%;
 	margin-left:-110px;
 	margin-top:-40px;
     border-radius: 10px;
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    width: 850px;
+}
+
+table th{
+    background-color: #F0FFF0;
+}
+
+table th, td{
+    padding: 1px 5 px;
+    text-align: center;
+}
+
+table td img{
+    width: 22px;
+}
+
+.center{
     text-align: center;
 }
 

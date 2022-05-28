@@ -16,7 +16,7 @@ let users = [{
   Email: "marioguerra@gmail.com",
   Numero: "8140028922",
   Produto: "Melão",
-  Quantidade: "40 kg",
+  Quantidade: 40,
   Data: "2022-05-28"
 },
 {
@@ -26,7 +26,27 @@ let users = [{
   Email: "joaosilva@gmail.com",
   Numero: "8140028922",
   Produto: "Abacaxi",
-  Quantidade: "90 kg",
+  Quantidade: 90,
+  Data: "2022-05-28"
+},
+{
+  id: 3,
+  Nome: "Caio",
+  Sobrenome: "Victor",
+  Email: "caio@gmail.com",
+  Numero: "81999999999",
+  Produto: "Melão",
+  Quantidade: 100,
+  Data: "2022-05-28"
+},
+{
+  id: 4,
+  Nome: "Gabriel",
+  Sobrenome: "Correia",
+  Email: "correia@gmail.com",
+  Numero: "81999999988",
+  Produto: "Abacaxi",
+  Quantidade: 100,
   Data: "2022-05-28"
 }
 ]
