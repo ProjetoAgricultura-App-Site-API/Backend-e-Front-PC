@@ -25,7 +25,9 @@
         <h1>PESQUISA DE PRODUTOS</h1>
         <form action="javascript: puxaproduto()">
             <label for="produtolabel">Produto</label>
-            <input type="text" id="produto" placeholder="Digite o nome do produto" required>
+            <input type="text" list="browsers" id="produto" oninput="procurarProduto()" placeholder="Digite o nome do produto" required>
+            <datalist id="browsers">
+            </datalist>
             <label for="quantLabel">Quantidade</label>
             <input type="text" id="quant" placeholder="Digite a quantidade (em KG)" required>
             <label for="datalabel">Data</label>
