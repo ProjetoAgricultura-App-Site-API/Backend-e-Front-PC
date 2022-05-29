@@ -61,7 +61,7 @@ function puxaproduto(){
 }
 
 function procurarProduto(){
-    const fruitslist = ["abacate","abacaxi","caju","jaca"]
+    const fruitslist = ["abacate","abacaxi","caju","jaca", "melão"]
     const data_list = document.getElementById('browsers')
     let Produto = document.getElementById('produto').value;
     const filteredFruitsList = fruitslist.filter((value) => {
