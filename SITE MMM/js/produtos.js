@@ -44,7 +44,7 @@ function puxaproduto(){
 
                 }
             } 
-            else {content.innerHTML = "NÃO HOUVE RESULTADOS NA BUSCA";}
+            else {alert("NÃO HOUVE RESULTADOS NA BUSCA");}
             
         })
         .catch(error => console.log(error))
