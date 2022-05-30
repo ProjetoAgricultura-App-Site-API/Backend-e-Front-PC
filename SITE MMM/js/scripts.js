@@ -12,7 +12,9 @@ function guardaCadastro() {
     var senhaValor = document.getElementById("password").value;
     var confirm = document.getElementById("passconfirmation").value;
     const btn = document.getElementById("CADASTRAR");
-    let listauser = JSON.parse(localStorage.getItem('listauser') || '[]');
+
+    //let listauser = JSON.parse(localStorage.getItem('listauser') || '[]');
+    
     if(senhaValor == confirm){
         var formValue = {
             Nome: nomeValor,
@@ -21,7 +23,7 @@ function guardaCadastro() {
             Senha: senhaValor
         }
 
-        //ADICIONA OS VALORES AO LOCAL STORAGE
+        //ADICIONA OS VALORES NA API DE CADASTRO
         function newuser(){
             axios.post(url, formValue)
             .then(response => {
@@ -32,13 +34,13 @@ function guardaCadastro() {
 
         newuser();
 
-        listauser.push(formValue);
-        localStorage.setItem('listauser', JSON.stringify(listauser));
+        //listauser.push(formValue);
+        //localStorage.setItem('listauser', JSON.stringify(listauser));
 
-        console.log(formValue);
+        console.log(formValue); //PRINTA A OS VALORES DIGITADOS PARA VER SE DEU CERTO
 
         alert("Cadastro realizado com sucesso, faça o login!!!");
-        window.location.href = "index.html"; 
+        window.location.href = "index.html"; //ENVIA O USUÁRIO PARA A TELA DE LOGIN 
     } 
     else{
         msgerror.setAttribute('style', 'display: block');
