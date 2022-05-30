@@ -1,3 +1,4 @@
+
 let userLogado = JSON.parse(localStorage.getItem('userLogado'));
 console.log(userLogado);
 let logado = document.getElementById('logado');
@@ -10,8 +11,9 @@ else{
 }
 
 function sair(){
-    localStorage.removeItem('token');
-    localStorage.removeItem('userLogado');
+    localStorage.removeItem('token');  /*REMOVE OS DADOS DE SEGURANÇA DO LOCALSTORAGE*/ 
+    localStorage.removeItem('userLogado'); /*REMOVE OS DADOS DO USUÁRIO LOGADO DO LOCALSTORAGE*/ 
 
+    alert("VOCÊ SERÁ REDIRECIONADO PARA A PÁGINA DE LOGIN!!!");
     window.location.href = "index.html";
 }
