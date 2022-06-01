@@ -10,6 +10,7 @@ app.use(cors())
 
 app.use(express.json())
 
+//LÊ OS DADOS DO .JSON PARA NÃO PERDER DADOS NOVOS
 fs.readFile("users.json", function(err, data){
   if(err){
     throw err;
@@ -46,8 +47,8 @@ app.route('/api').post((req, res) => {
     Senha: req.body.Senha
   })
   res.json('Saved user')
-  fs.writeFile("users.json",JSON.stringify(users), err => {
-    if (err) {throw err;}
+  fs.writeFile("users.json",JSON.stringify(users), err => { //ESCREVE DADOS RECEBIDOS PELA API NO .JSON
+    if (err) {throw err;} 
   })
 })
 
