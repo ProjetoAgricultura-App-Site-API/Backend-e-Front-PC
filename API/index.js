@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express')
 const cors = require('cors')
 
@@ -9,13 +10,14 @@ app.use(cors())
 
 app.use(express.json())
 
-let users = [{
-  id: 1,
-  Nome: "Mario",
-  Sobrenome: "Guerra",
-  Email: "marioguerra@gmail.com",
-  Senha: "123456"
-}]
+fs.readFile("users.json", function(err, data){
+  if(err){
+    throw err;
+  }
+
+  users = JSON.parse(data);
+})
+
 
 
 app.route('/api').get((req, res) => res.json({
@@ -44,6 +46,9 @@ app.route('/api').post((req, res) => {
     Senha: req.body.Senha
   })
   res.json('Saved user')
+  fs.writeFile("users.json",JSON.stringify(users), err => {
+    if (err) {throw err;}
+  })
 })
 
 app.route('/api/:id').put((req, res) => {

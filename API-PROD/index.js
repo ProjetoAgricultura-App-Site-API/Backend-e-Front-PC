@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express')
 const cors = require('cors')
 
@@ -9,47 +10,13 @@ app.use(cors())
 
 app.use(express.json())
 
-let users = [{
-  id: 1,
-  Nome: "Mario",
-  Sobrenome: "Guerra",
-  Email: "marioguerra@gmail.com",
-  Numero: "8140028922",
-  Produto: "Melão",
-  Quantidade: 40,
-  Data: "2022-05-28"
-},
-{
-  id: 2,
-  Nome: "João",
-  Sobrenome: "Silva",
-  Email: "joaosilva@gmail.com",
-  Numero: "8140028922",
-  Produto: "Abacaxi",
-  Quantidade: 90,
-  Data: "2022-05-28"
-},
-{
-  id: 3,
-  Nome: "Caio",
-  Sobrenome: "Victor",
-  Email: "caio@gmail.com",
-  Numero: "81999999999",
-  Produto: "Melão",
-  Quantidade: 100,
-  Data: "2022-05-28"
-},
-{
-  id: 4,
-  Nome: "Gabriel",
-  Sobrenome: "Correia",
-  Email: "correia@gmail.com",
-  Numero: "81999999889",
-  Produto: "Abacaxi",
-  Quantidade: 100,
-  Data: "2022-05-28"
-}
-]
+fs.readFile("prods.json", function(err, data){
+  if(err){
+    throw err;
+  }
+
+  users = JSON.parse(data);
+})
 
 
 app.route('/api').get((req, res) => res.json({
@@ -81,6 +48,9 @@ app.route('/api').post((req, res) => {
     Data: req.body.Data
   })
   res.json('Saved user')
+  fs.writeFile("prods.json",JSON.stringify(users), err => {
+    if (err) {throw err;}
+  })
 })
 
 app.route('/api/:id').put((req, res) => {
