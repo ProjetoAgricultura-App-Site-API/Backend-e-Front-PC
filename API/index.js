@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 //LÊ OS DADOS DO .JSON PARA NÃO PERDER DADOS NOVOS
-fs.readFile("users.json", function(err, data){
+fs.readFile("users.json", function(err, data){ //PUXA DADOS DOS USUÁRIOS DO SITE
   if(err){
     throw err;
   }
@@ -19,10 +19,22 @@ fs.readFile("users.json", function(err, data){
   users = JSON.parse(data);
 })
 
+fs.readFile("app_users.json", function(err, data){ //PUXA DADOS DOS USUÁRIOS DO APP
+  if(err){
+    throw err;
+  }
+
+  app_users = JSON.parse(data);
+})
 
 
-app.route('/api').get((req, res) => res.json({
+
+app.route('/api').get((req, res) => res.json({ //SITE
   users
+}))
+
+app.route('/api/APP').get((req, res) => res.json({ //APP
+  app_users
 }))
 
 app.route('/api/:id').get((req, res) => {
@@ -37,7 +49,7 @@ app.route('/api/:id').get((req, res) => {
   res.json(user)
 })
 
-app.route('/api').post((req, res) => {
+app.route('/api').post((req, res) => { //CADASTRA NOVOS USUÁRIOS DO SITE
   const lastId = users[users.length - 1].id
   users.push({
     id: lastId + 1,
@@ -48,6 +60,22 @@ app.route('/api').post((req, res) => {
   })
   res.json('Saved user')
   fs.writeFile("users.json",JSON.stringify(users), err => { //ESCREVE DADOS RECEBIDOS PELA API NO .JSON
+    if (err) {throw err;} 
+  })
+})
+
+app.route('/api/APP').post((req, res) => { //CADASTRA NOVOS USUÁRIOS DO APP
+  const lastId = users[users.length - 1].id
+  app_users.push({
+    id: lastId + 1,
+    Nome: req.body.Nome,
+    Sobrenome: req.body.Sobrenome,
+    Email: req.body.Email,
+    Numero: req.body.Numero,
+    Senha: req.body.Senha
+  })
+  res.json('Saved user')
+  fs.writeFile("app_users.json",JSON.stringify(users), err => { //ESCREVE DADOS RECEBIDOS PELA API NO .JSON
     if (err) {throw err;} 
   })
 })
