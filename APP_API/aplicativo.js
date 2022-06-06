@@ -19,8 +19,17 @@ fs.readFile("app.json", function(err, data){ //PUXA DADOS DOS USUÁRIOS DO APLIC
   users = JSON.parse(data);
 })
 
+userlogado = {
+  Login: '',
+  Senha: '',
+  Nome: '',
+  Sobrenome: '',
+  Email: '',
+  Telefone: ''
+}
+
 app.route('/api').get((req, res) => res.json({ //APLICATIVO
-  users
+  users, userlogado
 }))
 
 app.route('/api/:id').get((req, res) => {
@@ -53,17 +62,9 @@ app.route('/api').post((req, res) => { //CADASTRA NOVOS USUÁRIOS DO APLICATIVO
 })
 
 
-app.route('/api/:id').put((req, res) => {
-  const userId = req.params.id
-
-  const user = users.find(user => Number(user.id) === Number(userId))
-
-  if (!user) {
-    return res.json('User nor found!')
-  }
+app.route('/api').put((req, res) => {
 
   const updatedUser = {
-    ...user,
     Login: req.body.Login,
     Senha: req.body.Senha,
     Nome: req.body.Nome,
@@ -72,12 +73,7 @@ app.route('/api/:id').put((req, res) => {
     Telefone: req.body.Telefone
   }
 
-  users = users.map(user => {
-    if (Number(user.id) === Number(userId)) {
-      user = updatedUser
-    }
-    return user
-  })
+  userlogado = updatedUser;
 
   res.json("Updated user")
 })
