@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/pagvendas.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/produtos.js"></script>
-    <title>inicio</title>
+    <script src="js/vendas.js"></script>
+    <title>Pedidos do Dia</title>
 </head>
 <body>
     <header>
@@ -21,21 +21,16 @@
             </div>
         </div>
     </header>
-    
-    <div id="pesquisa">
-        <h1>PESQUISA DE PRODUTOS</h1>
-        <form action="javascript: puxaproduto()">
-            <label for="produtolabel">Produto</label>
-            <input type="text" list="browsers" id="produto" oninput="procurarProduto()" placeholder="Digite o nome do produto" required autocomplete="off">
-            <datalist id="browsers">
-            </datalist>
-            <label for="quantLabel">Quantidade</label>
-            <input type="text" id="quant" placeholder="Digite a quantidade (em KG)" required autocomplete="off">
-            <label for="datalabel">Data</label>
-            <input type="date" id="data" required>
-            <input type="submit" id ="btn-submit" value="Enviar">
-        </form>
-    </div>
+    <div id="titulodia">PRODUTOS CADASTRADOS PELO APP NO DIA</div>
+    <script>
+        var data = new Date();
+        var dia = String(data.getDate()).padStart(2, '0');
+        var mes = String(data.getMonth() + 1).padStart(2, '0');
+        var ano = data.getFullYear();
+        dataAtual = dia + '/' + mes + '/' + ano;
+        let = document.getElementById('titulodia')
+        titulodia.innerHTML ="PRODUTOS CADASTRADOS PELO APP NO DIA " + dataAtual
+    </script>
     <div id="content">
         <table>
             <thead>
