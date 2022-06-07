@@ -6,6 +6,7 @@ function puxaproduto(){
     let quant = document.getElementById('quant');
     let data = document.getElementById('data');
 
+    console.log(data.value)
     let req = {
         Produto: produto.value,
         Quantidade: quant.value,
@@ -40,7 +41,7 @@ function puxaproduto(){
                     td_num.innerText = filtrodados[i].Numero;
                     td_prod.innerText = filtrodados[i].Produto;
                     td_quant.innerText = filtrodados[i].Quantidade + " kg";
-                    td_data.innerText = filtrodados[i].Data;
+                    td_data.innerText = filtrodados[i].Data.split('-').reverse().join('/');
 
                 }
             } 
