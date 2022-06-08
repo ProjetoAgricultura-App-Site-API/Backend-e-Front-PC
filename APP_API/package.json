@@ -2,9 +2,9 @@
   "name": "nodest",
   "version": "1.0.0",
   "description": "primeira api da vida",
-  "main": "index.js",
+  "main": "aplicativo.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon aplicativo.js"
   },
   "author": "",
   "license": "ISC",

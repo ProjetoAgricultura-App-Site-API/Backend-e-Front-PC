@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 //LÊ OS DADOS DO .JSON PARA NÃO PERDER DADOS NOVOS
-fs.readFile("app.json", function(err, data){ //PUXA DADOS DOS USUÁRIOS DO SITE
+fs.readFile("app.json", function(err, data){ //PUXA DADOS DOS USUÁRIOS DO APLICATIVO
   if(err){
     throw err;
   }
@@ -19,8 +19,17 @@ fs.readFile("app.json", function(err, data){ //PUXA DADOS DOS USUÁRIOS DO SITE
   users = JSON.parse(data);
 })
 
-app.route('/api').get((req, res) => res.json({ //SITE
-  users
+userlogado = {
+  Login: '',
+  Senha: '',
+  Nome: '',
+  Sobrenome: '',
+  Email: '',
+  Telefone: ''
+}
+
+app.route('/api').get((req, res) => res.json({ //APLICATIVO
+  users, userlogado
 }))
 
 app.route('/api/:id').get((req, res) => {
@@ -35,7 +44,7 @@ app.route('/api/:id').get((req, res) => {
   res.json(user)
 })
 
-app.route('/api').post((req, res) => { //CADASTRA NOVOS USUÁRIOS DO SITE
+app.route('/api').post((req, res) => { //CADASTRA NOVOS USUÁRIOS DO APLICATIVO
   const lastId = users[users.length - 1].id
   users.push({
     id: lastId + 1,
@@ -53,29 +62,18 @@ app.route('/api').post((req, res) => { //CADASTRA NOVOS USUÁRIOS DO SITE
 })
 
 
-app.route('/api/:id').put((req, res) => {
-  const userId = req.params.id
-
-  const user = users.find(user => Number(user.id) === Number(userId))
-
-  if (!user) {
-    return res.json('User nor found!')
-  }
+app.route('/api').put((req, res) => {
 
   const updatedUser = {
-    ...user,
+    Login: req.body.Login,
+    Senha: req.body.Senha,
     Nome: req.body.Nome,
     Sobrenome: req.body.Sobrenome,
     Email: req.body.Email,
-    Senha: req.body.Senha
+    Telefone: req.body.Telefone
   }
 
-  users = users.map(user => {
-    if (Number(user.id) === Number(userId)) {
-      user = updatedUser
-    }
-    return user
-  })
+  userlogado = updatedUser;
 
   res.json("Updated user")
 })
