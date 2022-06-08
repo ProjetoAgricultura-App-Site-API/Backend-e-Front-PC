@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: white;
+    border: none;
+}
+
+
+.Usuário{
+    margin:0;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 25px;
+
+    font-weight: 300;
+    text-align:left;
+    position: absolute;
+    margin-top: 1% ;
+    color: rgb(13, 36, 150);
+    display: block;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+body{
+    background-image: url(../img/fundodesfocado.png);
+    background-size: cover;
+}
+
+.main-container{
+    width: 800px;
+    height: 420px;
+    border: 2px solid #000;
+    border-radius: 80px 0px 80px 0px;
+    color: rgb(8, 8, 8);
+    background-color: rgba(0, 5, 0, 0.8);
+    top: 64%;
+    left: 50%;
+    position: absolute;
+    transform:translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 60px 28px;
+}
+ 
+.imagem{
+    display: inside;
+    margin: 100px ;
+    border-radius: 90%;
+    padding: 10px;
+    margin-top: 1px;
+    position: absolute;
+    top: -69px;
+    left: 230px;
+}
+
+.main-container{
+    width: 800px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+}
+
+.full-box{
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.half-box{
+    flex: 1 1 45%;
+}
+
+.spacing{
+    margin-right: 2.5%;
+}
+
+label{
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.form{
+    padding-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+h1{
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-weight: 1px;
+    font-size: .8rem;
+}
+
+.botao{
+    margin-left: 36%;
+    margin-bottom: 80%;
+}
+
+
+input{
+    background-color: #F0FFF0;
+    border-bottom: 2px solid #323232;
+    padding: 5px;
+    font-weight: 0.9rem;
+    margin-bottom: 40px;
+}
+
+input:focus{
+    border-color: lime;
+}
+
+input[type="submit"]{
+    background-color: lime;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    background-color: burlywood;
+    transition: .5s;
+}
