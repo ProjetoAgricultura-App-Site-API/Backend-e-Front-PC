@@ -2,43 +2,55 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>MinhaConta</title>
-  
-<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-<link rel="stylesheet" href="./style1.css">
+  <title>Minha Conta</title>
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="css/perfil.css">
 
 </head>     
     <body>
+      <header>
+        <div class="center">
+            <div class="logo"><img src="img/logo tamanho menor.png" alt=""></div>
+            <div class="menu">
+                <a href="inicio.html">Início</a>
+                <a href="conta.html">Minha Conta</a>
+                <a href="vendas.html">Vendas do Dia</a>
+                <button onclick="sair()"> SAIR </button>
+            </div>
+        </div>
+      </header>
       <div class="Usuário">
-        <h1>Informações do usuário<div class='fa fa-user'></div></h1>
+        <h1 id="userlabel">Informações do usuário<div class='fa fa-user'></div></h1>
       </div>
       <div class="main-container">
         <img class="imagem" src="https://img.freepik.com/free-vector/farmer-using-technology-digital-agriculture_53876-113813.jpg" alt="" id='header' width="150" height="150">
         <div class="form">
           <div class="half-box spacing">
               <label for="nome">Nome</label>
-              <h1>SEU NOME</h1>
+              <h1 id="nome"></h1>
           </div>
           <div class="half-box">
             <label for="sobrenome">Sobrenome</label>
-            <h1>SEU SOBRENOME</h1>
+            <h1 id="sobrenome"></h1>
           </div>
           <div class="full-box">
             <label for="email">Email</label>
-            <h1>SEU EMAIL</h1>
+            <h1 id="email"></h1>
           </div>
           <div class="half-box spacing">
             <label for="senha">Senha</label>
-            <h1>SUA SENHA</h1>
+            <h1 id="senha"></h1>
           </div>
-          <div class="half-box">
+          <div class="half-box spacing">
             <label for="novasenha">Senha Nova</label>
-            <h1>NOVA SENHA</h1>
+            <input id="novasenha"></input>
           </div>
         </div>
         <div class="botao">
           <input type= "submit" id ="CADASTRAR" value="Atualizar Informações">
+        </div>
       </div>
-      </div>
+      <script src="js/inicio.js"></script>
+      <script src="js/perfil_LOG.js"></script>
     </body>
 </html>
